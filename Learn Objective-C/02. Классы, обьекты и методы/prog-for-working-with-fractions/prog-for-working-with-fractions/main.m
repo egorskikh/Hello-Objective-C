@@ -42,8 +42,8 @@ NSLog(@"%i/%i", numerator, denominator);
 @end
 
 //--Секция @program--
-int main(int argc, const char * argv[]) {
-    
+int main(int argc, const char * argv[])
+{    
     @autoreleasepool {
         Fraction *myFraction;
         
