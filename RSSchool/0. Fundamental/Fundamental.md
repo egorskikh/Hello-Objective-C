@@ -184,8 +184,9 @@ int main(int argc, const char * argv[]) {
     
     return 0;
 }
-
 ```
+# [ Demo#1 Basic C ]( )
+
 ## Object-Oriented Programming
 
 Используется понятие:
@@ -215,4 +216,170 @@ int main(int argc, const char * argv[]) {
 Отправка сообщений - предузумевает, что объект имеет возможность предоставить реализацию метода при его вызове. И именно он отвечает за это, а не код который вызывал этот метод.
 
 * ...
+
+## Class
+
+Определение интерфейса класса в Objective-C указывается в его заголовочном файле *.h*, а реализация класса в файле имплементации *.m*
+
+```objc
+@interface Human: NSObject // имя класса : родительский класс
+{
+    int age;            //
+    id data;            //  переменные экземпляра 
+    NSString *_name;    //
+}
+
+-(void)sayHello;                                   // прототипы методов
++ (Human *)createHumanWithName:(NSString *)name;   // 
+
+@end
+```
+
+Реализация класса:
+```objc
+@implementation Human
+
+- (void)sayHello;
+{
+    puts("Hello!");
+}
+
++ (Human *)createHumanWithName:(NSString *)name
+{
+   Human *human = [[Human alloc] init];
+   human.name = name;
+   return human;
+}
+
+@end
+```
+
+## Method
+
+Метод - это функция которая принадлежит объекту. Определение метода похоже на определение функции в языке C. 
+
+| -  | +  | 
+| Метод экземпляра | Метод класса | 
+
+```objc
+@interface SomeClass: NSObject
+
+- (void)foo;                                  
++ (int)foo:(int)bar;
+- (NSInteger)foo:(int)bar1 oof: (int)bar2;  // если несколько входных параметров
+
+@end
+```
+
+|  +  |  (int)  | foo |  :(int)  |  bar  |
+| Указание его принадлежности | возвращаемый тип | имя метода |  тип параметра  |  имя параметра
+
+### Реализация метода 
+
+Реализация метода такая же как функция в языке C.
+
+```objc
+@implementation SomeClass
+
+- (void)foo {
+
+}
+
++ (int)foo:(int)bar {
+    return 123;
+}
+
+- (NSInteger)foo:(int)bar1 oof: (int)bar2{
+    return 123;
+}
+
+@end
+```
+
+## Object 
+
+Объект - это указатель на область памяти, в которой находится экземпляр класса. 
+
+```objc
+
+Human *object;              // определение указателя с типом класса
+object = [Human alloc];    // присваивается адрес выделенной памяти
+object = [object init];   // данный метод проводит присвоение значения полям данного объекта
+```
+```objc
+
+Human *object = [[Human alloc] init];
+Human *object = [Human new];
+```
+
+## MRC&ARC
+
+* MRC - ручной подсчет ссылок 
+* ARC - автоматический подсчет ссылок
+
+## Initialization
+Инициализация - это процесс присваивание начальных значений полям объекта.
+
+Один из стандартных инициализаторов *init*, который определен в классе NSObject.
+```objc
+- (id)init
+{
+   self = [super init];      // вызов родительского инициализатора
+   if (self)
+   {
+       _name = @"Egor";
+       _surname = @"Gorskikh";
+   }
+   return self;
+}
+```
+
+## Deinitialization
+Деинициализация - это процесс очищения памяти от экземпляра класса.
+
+Вызывется в рантайме и разработчику выполнять его не нужно.
+```objc
+- (void)dealloc
+{
+  // do stuff
+  [self.service stopJob];
+  
+  // only under MRC
+  // [super dealloc]
+}
+```
+## Object Structure
+
+В Objective-C каждый объект на базовом уровне представлен структурой языка C.
+
+```objc
+typedef struct objc_object {
+    Class isa;  // Указатель класс isa, который ссылается на структуру Class 
+...
+} *id;          // тип id представляет собой универсальный тип  описывающий любой объект objc
+```
+nil - отсутствие любого значения 
+
+## Dynamic Method Dispatch
+
+Objective-C реализует посылку сообщений, через динамическую диспетчеризацию методов. Конечная реализация вызываемого метода становится известна на этапе выполнения. 
+
+Вызов метода выглядит следующим образом:
+```objc
+[receiver message]
+```
+|  receiver  |  message  | 
+| У некоторого объекта receiver в interface определен метод message | вызов метода | 
+
+Компилятор образует данный синтаксис в вызов функции языка C.
+```objc
+objc_msgSend(receiver, @selector(message))
+```
+Если метод принимает параметры:
+```objc
+objc_msgSend(receiver, @selector(message: arg1: arg2:), arg1, arg2)
+```
+
+# [ Demo#2 Basic Objective-C ]( )
+
 
