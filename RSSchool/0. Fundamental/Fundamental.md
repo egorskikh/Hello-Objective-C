@@ -185,7 +185,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 ```
-# [ Demo#1 Basic C ]( )
+# [ Demo#1 Basic C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Demo1%20Basic%20C)
 
 ## Object-Oriented Programming
 
@@ -259,6 +259,7 @@ int main(int argc, const char * argv[]) {
 Метод - это функция которая принадлежит объекту. Определение метода похоже на определение функции в языке C. 
 
 | -  | +  | 
+| --- | --- |
 | Метод экземпляра | Метод класса | 
 
 ```objc
@@ -369,6 +370,7 @@ Objective-C реализует посылку сообщений, через д�
 [receiver message]
 ```
 |  receiver  |  message  | 
+| --- | --- | 
 | У некоторого объекта receiver в interface определен метод message | вызов метода | 
 
 Компилятор образует данный синтаксис в вызов функции языка C.
@@ -380,6 +382,42 @@ objc_msgSend(receiver, @selector(message))
 objc_msgSend(receiver, @selector(message: arg1: arg2:), arg1, arg2)
 ```
 
-# [ Demo#2 Basic Objective-C ]( )
+# [ Demo#2 Basic Objective-C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Demo2%20Basic%20Objective-C)
 
+## Protocol 
+Протокол определяет набор методов и свойств, которые класс должен реализовать, чтобы соответствовать заданному поведению.
 
+```objc
+@protocol Bird<NSObject> // <NSObject> - наследуется  
+
+@required
+-(void)sing;
+
+@optional
+-(void)fly;
+
+@end
+```
+
+```objc
+@interface Mockingbird: NSObject <Bird>
+
+@end
+
+@implementation Mockingbird
+
+- (void)sing {                 //
+    NSLog(@"🎶🦜");            //
+}                             //  Реализация этих методов
+- (void)fly {                 //
+    NSLog(@"Faster than 🛩"); // 
+}
+ 
+@end
+```
+
+Протокол можно использовать как тип
+
+```objc
+id<Bird> arbitraryBird = [Mockingbird new];
+```
