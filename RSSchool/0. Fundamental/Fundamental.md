@@ -4,7 +4,7 @@
 
 * [ Basic C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Demo1%20Basic%20C)
 * [ Basic Objective-C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Demo2%20Basic%20Objective-C)
-* [ Mediume Objective-C ]( - )
+* [ Mediume Objective-C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Mediume%20Objective-C)
 
 ## Расширение имен файлов
 
@@ -663,4 +663,4 @@ Category добавляются на этапе рантайма и из-за э
 
 @end
 ```
-# [ Mediume Objective-C ]( - )
+# [ Mediume Objective-C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Mediume%20Objective-C)
