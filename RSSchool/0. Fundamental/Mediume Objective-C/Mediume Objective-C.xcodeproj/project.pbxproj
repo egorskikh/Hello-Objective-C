@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BF33277263C2DAC00737370 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF33276263C2DAC00737370 /* main.m */; };
+		7BF33282263C2E0800737370 /* RSPassenger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF33281263C2E0800737370 /* RSPassenger.m */; };
+		7BF33288263C321E00737370 /* RSVehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF33287263C321E00737370 /* RSVehicle.m */; };
+		7BF3328D263C358500737370 /* RSCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF3328C263C358500737370 /* RSCar.m */; };
+		7BF33293263C366100737370 /* RSCarPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF33292263C366100737370 /* RSCarPort.m */; };
+		7BF332A2263C426900737370 /* RSPassenger_RandomGeneratable.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF332A1263C426900737370 /* RSPassenger_RandomGeneratable.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7BF33271263C2DAC00737370 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		7BF33273263C2DAC00737370 /* Mediume Objective-C */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mediume Objective-C"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF33276263C2DAC00737370 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BF33280263C2E0800737370 /* RSPassenger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSPassenger.h; sourceTree = "<group>"; };
+		7BF33281263C2E0800737370 /* RSPassenger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSPassenger.m; sourceTree = "<group>"; };
+		7BF33286263C321E00737370 /* RSVehicle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSVehicle.h; sourceTree = "<group>"; };
+		7BF33287263C321E00737370 /* RSVehicle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSVehicle.m; sourceTree = "<group>"; };
+		7BF3328B263C358500737370 /* RSCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCar.h; sourceTree = "<group>"; };
+		7BF3328C263C358500737370 /* RSCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCar.m; sourceTree = "<group>"; };
+		7BF33291263C366100737370 /* RSCarPort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSCarPort.h; sourceTree = "<group>"; };
+		7BF33292263C366100737370 /* RSCarPort.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSCarPort.m; sourceTree = "<group>"; };
+		7BF33297263C3B3700737370 /* RSEnterable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSEnterable.h; sourceTree = "<group>"; };
+		7BF332A0263C426900737370 /* RSPassenger_RandomGeneratable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSPassenger_RandomGeneratable.h; sourceTree = "<group>"; };
+		7BF332A1263C426900737370 /* RSPassenger_RandomGeneratable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSPassenger_RandomGeneratable.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BF33270263C2DAC00737370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BF3326A263C2DAC00737370 = {
+			isa = PBXGroup;
+			children = (
+				7BF33275263C2DAC00737370 /* Mediume Objective-C */,
+				7BF33274263C2DAC00737370 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BF33274263C2DAC00737370 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BF33273263C2DAC00737370 /* Mediume Objective-C */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BF33275263C2DAC00737370 /* Mediume Objective-C */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3327E263C2DC100737370 /* Model */,
+				7BF33276263C2DAC00737370 /* main.m */,
+			);
+			path = "Mediume Objective-C";
+			sourceTree = "<group>";
+		};
+		7BF3327E263C2DC100737370 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3328F263C361B00737370 /* Port */,
+				7BF3328A263C356D00737370 /* Car */,
+				7BF33285263C31EB00737370 /* Vehicle */,
+				7BF3327F263C2DCD00737370 /* Passenger */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BF3327F263C2DCD00737370 /* Passenger */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3329F263C422800737370 /* Сategory */,
+				7BF33280263C2E0800737370 /* RSPassenger.h */,
+				7BF33281263C2E0800737370 /* RSPassenger.m */,
+			);
+			path = Passenger;
+			sourceTree = "<group>";
+		};
+		7BF33285263C31EB00737370 /* Vehicle */ = {
+			isa = PBXGroup;
+			children = (
+				7BF33286263C321E00737370 /* RSVehicle.h */,
+				7BF33287263C321E00737370 /* RSVehicle.m */,
+			);
+			path = Vehicle;
+			sourceTree = "<group>";
+		};
+		7BF3328A263C356D00737370 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				7BF3328B263C358500737370 /* RSCar.h */,
+				7BF3328C263C358500737370 /* RSCar.m */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		7BF3328F263C361B00737370 /* Port */ = {
+			isa = PBXGroup;
+			children = (
+				7BF33290263C362C00737370 /* CarPort */,
+			);
+			path = Port;
+			sourceTree = "<group>";
+		};
+		7BF33290263C362C00737370 /* CarPort */ = {
+			isa = PBXGroup;
+			children = (
+				7BF33291263C366100737370 /* RSCarPort.h */,
+				7BF33292263C366100737370 /* RSCarPort.m */,
+				7BF33297263C3B3700737370 /* RSEnterable.h */,
+			);
+			path = CarPort;
+			sourceTree = "<group>";
+		};
+		7BF3329F263C422800737370 /* Сategory */ = {
+			isa = PBXGroup;
+			children = (
+				7BF332A0263C426900737370 /* RSPassenger_RandomGeneratable.h */,
+				7BF332A1263C426900737370 /* RSPassenger_RandomGeneratable.m */,
+			);
+			path = "Сategory";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BF33272263C2DAC00737370 /* Mediume Objective-C */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BF3327A263C2DAC00737370 /* Build configuration list for PBXNativeTarget "Mediume Objective-C" */;
+			buildPhases = (
+				7BF3326F263C2DAC00737370 /* Sources */,
+				7BF33270263C2DAC00737370 /* Frameworks */,
+				7BF33271263C2DAC00737370 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mediume Objective-C";
+			productName = "Mediume Objective-C";
+			productReference = 7BF33273263C2DAC00737370 /* Mediume Objective-C */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BF3326B263C2DAC00737370 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					7BF33272263C2DAC00737370 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 7BF3326E263C2DAC00737370 /* Build configuration list for PBXProject "Mediume Objective-C" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7BF3326A263C2DAC00737370;
+			productRefGroup = 7BF33274263C2DAC00737370 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BF33272263C2DAC00737370 /* Mediume Objective-C */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BF3326F263C2DAC00737370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF33293263C366100737370 /* RSCarPort.m in Sources */,
+				7BF33277263C2DAC00737370 /* main.m in Sources */,
+				7BF33282263C2E0800737370 /* RSPassenger.m in Sources */,
+				7BF3328D263C358500737370 /* RSCar.m in Sources */,
+				7BF33288263C321E00737370 /* RSVehicle.m in Sources */,
+				7BF332A2263C426900737370 /* RSPassenger_RandomGeneratable.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7BF33278263C2DAC00737370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7BF33279263C2DAC00737370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7BF3327B263C2DAC00737370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68FXT4UH73;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7BF3327C263C2DAC00737370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 68FXT4UH73;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BF3326E263C2DAC00737370 /* Build configuration list for PBXProject "Mediume Objective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BF33278263C2DAC00737370 /* Debug */,
+				7BF33279263C2DAC00737370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BF3327A263C2DAC00737370 /* Build configuration list for PBXNativeTarget "Mediume Objective-C" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BF3327B263C2DAC00737370 /* Debug */,
+				7BF3327C263C2DAC00737370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BF3326B263C2DAC00737370 /* Project object */;
+}
