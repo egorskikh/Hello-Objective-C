@@ -474,7 +474,7 @@ if ([arbitraryBird isMemberOfClass: [Mockingbird class]]) {
 }
 ```
 
-##Property
+## Property
 Переменные экземпляра, позволяют связать данные с экземплярами класса.
 Свойства позволяют организовать доступ к этим переменным.
 ```objc
