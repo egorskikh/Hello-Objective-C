@@ -481,6 +481,7 @@ if ([arbitraryBird isMemberOfClass: [Mockingbird class]]) {
 @property (nonatomic, copy) NSString *birdName;
 ```
 |  @property  |  (nonatomic, copy)  | NSString |  *birdName;  |  
+| ---- | ----  | ---- | ---- | 
 | ключевое слово | список атрибутов | тип данных |  имя переменной  | 
 
 Конструкция является синтаксическим сахаром и компилятор генерирует специальные метода доступа согласно этому свойству.
