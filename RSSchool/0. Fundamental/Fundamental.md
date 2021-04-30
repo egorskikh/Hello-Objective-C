@@ -1,5 +1,11 @@
 # Fundamental
 
+### Projects
+
+* [ Basic C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Demo1%20Basic%20C)
+* [ Basic Objective-C ](https://github.com/egorskikh/Hello-Objective-C/tree/main/RSSchool/0.%20Fundamental/Demo2%20Basic%20Objective-C)
+* [ Mediume Objective-C ]( - )
+
 ## Расширение имен файлов
 
 | Расширение  | Описание | Что тут? |
@@ -273,7 +279,7 @@ int main(int argc, const char * argv[]) {
 ```
 
 |  +  |  (int)  | foo |  :(int)  |  bar  |
-| Указание его принадлежности | возвращаемый тип | имя метода |  тип параметра  |  имя параметра
+| Указание его принадлежности | возвращаемый тип | имя метода |  тип параметра  |  имя параметра |
 
 ### Реализация метода 
 
@@ -421,3 +427,240 @@ objc_msgSend(receiver, @selector(message: arg1: arg2:), arg1, arg2)
 ```objc
 id<Bird> arbitraryBird = [Mockingbird new];
 ```
+
+```objc
+@interface SomeClass
+-(void)whatIsThiesPokemon:(id<Bird>)bird;
+@end
+```
+
+## Reflection & Introspection
+Objective-C является рефлективным языком. Это означает, что можно проверить реализацию метода, протокола или наследственность  от класса.
+
+
+Что бы проверить реализацию метода *respondsToSelector* :
+```objc
+id<Bird> arbitraryBird = [Mockingbird new];
+
+if ([arbitraryBird respondsToSelector: @selector(fly)]) {
+    [arbitraryBird fly];
+}
+```
+
+Что бы проверить реализацию протокола в классе *conformToProtocol* :
+```objc
+id<Bird> arbitraryBird = [Mockingbird new];
+
+if ([Mockingbird conformToProtocol: @protocol(NSCopying)]) {
+    id birdClone = [(id)arbitraryBird copy];
+}
+```
+
+Что бы проверить находиться ли класс в иерархии классов что был передан в качестве параметра *isKindOfClass* :
+```objc
+id<Bird> arbitraryBird = [Mockingbird new];
+
+if ([arbitraryBird isKindOfClass: [NSObject class]]) {
+    NSLog(@"This is am Objective-C object: %@", arbitraryBird);
+}
+```
+
+Что бы проверить, что класс объекта, что он в точности является тем классом 
+```objc
+id<Bird> arbitraryBird = [Mockingbird new];
+
+if ([arbitraryBird isMemberOfClass: [Mockingbird class]]) {
+    NSLog(@"This is a Mockingbird: %@", arbitraryBird);
+}
+```
+
+##Property
+Переменные экземпляра, позволяют связать данные с экземплярами класса.
+Свойства позволяют организовать доступ к этим переменным.
+```objc
+@property (nonatomic, copy) NSString *birdName;
+```
+|  @property  |  (nonatomic, copy)  | NSString |  *birdName;  |  
+| ключевое слово | список атрибутов | тип данных |  имя переменной  | 
+
+Конструкция является синтаксическим сахаром и компилятор генерирует специальные метода доступа согласно этому свойству.
+Их нейминг таков: 
+геттер: имеет имя свойства, 
+сеттер: сначала идет set а после имя свойства
+```objc
+- (NSString *)birdName;
+- (void)setBirdName : (NSString *)birdName;
+```
+
+Данное поведение можно изменить при помощи атрибутов геттер и сеттер и указать желаемые имена методов доступа.
+```objc
+@property (nonatomic, copy, getter=bird, setter=setBird) NSString *birdName;
+
+- (NSString *)bird;
+- (void)setBird: (NSString *)birdName;
+```
+
+## Property Attributes
+
+* Accessibility - атрибуты доступности 
+* Ownership - атрибуты владения
+* Atomicity - атрибуты атомарности
+* Nullability - атрибуты изануляемости
+
+### Accessibility
+
+* readwrite
+
+Используется по умолчанию , если другого не определенно. Когда он указан компилятор генерирует геттер и сеттер и переменную экземпляра.
+
+* readonly
+
+Будет сгенерирован только геттер 
+
+### Ownership
+
+Атрибуты владения позволяют указать семантику работы с памятью внутри свойства 
+
+* retian
+* strong
+* weak
+* copy
+* assing
+* unsafe_unretained
+
+### Atomicity
+
+* atomic - используется по умолчанию, если другого не определенно. Когда он указан компилятор генерирует специальный код в методах доступа, который предотвращает одновременный доступ к ресурсу  из нескольких потоков. Это может быть полезно когда нужно решить проблему многопоточности. Если предопределен метода доступа у атомарного свойства , тогда и другой метод доступа также должен быть предопределен   
+* nonatomic - указывает компилятору не генерировать этот вспомогательный код. Тогда свойство остается не защищенном от одновременного доступа нескольких потоков.
+
+Если не получается объяснить почему свойство должно быть атомарным, тогда оно должно быть *nonatomic* .
+
+### Nullability
+
+Данные атрибуты могут указать может ли свойство хранить значение nil или нет.
+
+* null_unspecified - используется по умолчанию если другого не определенно. Не укзаывает то что свойство может хранить значение nil или нет
+* null_resettable - указывает что getter свойство всегда вернет значение которое не равно nil. При этом если данному свойству присвоить значение nil, тогда его значение сброситься на *по умолчанию*
+* nonnull - свойство не может хранить значение nil
+* nullable - свойство может хранить значение nil
+
+### Common recommendations
+
+В методе init и dealloc не стоит использовать доступ к свойству через методы доступа так как последние два могу быть определены таким образом, что они будут работать медленно, а эти методы предпологаются быстрыми к исполнению. 
+
+## Category 
+
+Это механизм языка который позволяет расширять интерфейс уже существующего класса без необходимости наследования дынный механизм доступен даже для тех классов исходный код которых остается недоступным. Интерфейс категории описываются в заголовочном файле категории и похож на определение интерфейса класса 
+
+```objc
+@interface Mockingbird (RoboticBird)     // (RoboticBird) - имя категории
+
+-(void)iWillBeBack;                     // описываются прототипы методов
+
+@end
+```
+
+### Реализация категории 
+Описывется в файли имплементации этой категории
+
+```objc
+@implepentation Mockingbird (RoboticBird)     // (RoboticBird) - имя категории
+
+-(void)iWillBeBack {
+      NSLog(@"pew")
+}                    
+
+@end
+```
+
+Бывают ситуации когда в категории уже определен метод в интерфейса класса или любой другой категории этого класса в таком случае при импорте нескольких категорий будет использована реализация той которая была импортирована последней.
+
+## Extension 
+
+Расширение определяет свойства и методы которые необходимы классу для его внутренней работы. 
+
+Расширение определяется для тех классов имплементация которых доступно. 
+Например: собственные классы
+
+```objc
+@interface Mockingbird ()     
+
+@property (nonatomic, assign) NSInteger wingspan;  
+-(void)makeEgg;                  
+
+@end
+```
+Реализация расширения определяется в реализации самого класса.
+
+## Category vs Extension
+
+Разница между Category и Extension:
+Extension добавляются на этапе компиляции ввиду чего в них можно определить переменные экземпляра а для свойств которые добавлены в extension эти переменные будут добавлены автоматический.
+Category добавляются на этапе рантайма и из-за этого в ней нельзя определить переменные экземпояра, а для свойств которые определны в категории эти переменные добавлениы автоматически не будут.
+
+```objc
+@interface Bird ()    
+
+@property (nonatomic, assign) NSInteger wingspan;   // Property
+
+@end
+
+@implepentation Bird
+
+- (void) tellWingspan {
+    printf("%d", _wingspan);
+}
+@end
+```
+
+```objc
+@interface Bird ()    
+
+@property (nonatomic, copy) NSString *colorType*;   // Property
+
+@end
+
+@implepentation Bird
+
+- (NSString *)colorType {
+    return @"Red";
+}
+
+- (void)setColorType: (NSString *)colorType {
+    // ...
+}
+
+@end
+```
+
+## Other keywords
+
+* @syntesize - позволяет изменить для свойство его его переменную экземпляра.
+* @dynamic - заставляет генератор не генерировать методы доступа и уверяет его в том, что эти методы будут добавлены на этапе выполнения.
+
+### @syntesize
+```objc
+@implepentation SomeClass
+
+@syntesize someProperty;
+
+@end
+```
+
+Чтобы изменить и сделайть свой собственный айвар
+```objc
+@implepentation SomeClass
+
+@syntesize someProperty = _someAnotherProperty;
+
+@end
+```
+### @dynamic
+```objc
+@implepentation SomeClass
+
+@dynamic property;
+
+@end
+```
+# [ Mediume Objective-C ]( - )
