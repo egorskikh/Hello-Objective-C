@@ -167,3 +167,41 @@ static NSString *message = @"Hello, world!";
 ```
 
 ## Autorelease pool
+
+```objc
+-(NSString *)getMessage {
+    NSString *message = [[NSString alloc] initWithUTF8String: "Hello, World!"] ;
+
+    return [message autorelease];
+}
+
+```
+
+Как создать такой пул?
+
+1:
+```objc
+
+@autoreleasepool {
+
+}
+```
+2(устарело): 
+
+```objc
+
+NSautoreleasepool *pool = [ [NSautoreleasepool alloc] init];
+
+```
+autoreleasepool должен быть создан за пределами скоупа за который хочет выйти ваш объект
+
+## Autorelease pool stack
+
+```objc
+
+@autoreleasepool {
+    @autoreleasepool {
+        
+    }
+}
+```
