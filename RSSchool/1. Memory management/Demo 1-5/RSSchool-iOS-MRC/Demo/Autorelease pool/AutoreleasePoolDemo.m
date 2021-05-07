@@ -14,10 +14,10 @@
 
 - (void)execute {
     [self autoreleaseOwnedString];
-    [self autoreleaseNonOwnedString];
-    [self autoreleaseStringFromCustomMethod];
-    [self autoreleaseLiteralString];
-    [self manualAutoreleaseString];
+//    [self autoreleaseNonOwnedString];
+//    [self autoreleaseStringFromCustomMethod];
+//    [self autoreleaseLiteralString];
+//    [self manualAutoreleaseString];
 }
 
 - (void)autoreleaseOwnedString {
