@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B1CA4842646854B00291933 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1CA4832646854B00291933 /* main.m */; };
+		7BDB14582646C5BF005A9100 /* EGBoxer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB14572646C5BF005A9100 /* EGBoxer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		7B1CA4802646854B00291933 /* Properties */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Properties; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1CA4832646854B00291933 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7BDB14562646C5BF005A9100 /* EGBoxer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGBoxer.h; sourceTree = "<group>"; };
+		7BDB14572646C5BF005A9100 /* EGBoxer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGBoxer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,8 @@
 		7B1CA4822646854B00291933 /* Properties */ = {
 			isa = PBXGroup;
 			children = (
+				7BDB14562646C5BF005A9100 /* EGBoxer.h */,
+				7BDB14572646C5BF005A9100 /* EGBoxer.m */,
 				7B1CA4832646854B00291933 /* main.m */,
 			);
 			path = Properties;
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDB14582646C5BF005A9100 /* EGBoxer.m in Sources */,
 				7B1CA4842646854B00291933 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
